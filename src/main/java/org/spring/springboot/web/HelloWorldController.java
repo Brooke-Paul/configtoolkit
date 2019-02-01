@@ -15,7 +15,12 @@ public class HelloWorldController {
     }
 
     @RequestMapping("/error")
+    public String error() {
+        return "not found error";
+    }
+
+    @RequestMapping("/to404")
     public String to404() {
-        return "not found";
+        return "not found to404";
     }
 }
