@@ -13,4 +13,9 @@ public class HelloWorldController {
     public String sayHello() {
         return "Hello,World!";
     }
+
+    @RequestMapping("/error")
+    public String to404() {
+        return "not found";
+    }
 }
