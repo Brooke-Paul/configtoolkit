@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:config="https://crnlmchina.github.io/config"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+             https://crnlmchina.github.io/config https://crnlmchina.github.io/config/config.xsd
+              http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:*.properties" system-properties-mode="OVERRIDE"
+                                  ignore-unresolvable="true"/>
+    <context:component-scan base-package="org.spring.springboot"/>
+    <config:profile connect-str="192.168.31.12:2181" root-node="/root" version="1.0.0"/>
+    <!--<config:group id="groupProp" node="address"/>-->
+    <!--<bean id="address" class="org.spring.springboot.Address">-->
+    <!--<property name="address" value="#{groupProp['chengdu']}" />-->
+    <!--<property name="value" value="1" />-->
+    <!--</bean>-->
+
+    <config:placeholder>
+        <config:group node="address"/>
+    </config:placeholder>
+
+    <bean class="org.spring.springboot.Address">
+        <property name="key" value="chengdu"/>
+        <property name="value" value="1"/>
+    </bean>
+</beans>

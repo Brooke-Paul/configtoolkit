@@ -2,7 +2,9 @@ package org.spring.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ImportResource;
 
+@ImportResource({"classpath*:applicationconfig*"})
 @SpringBootApplication
 public class Application {
 
