@@ -10,18 +10,22 @@
                                   ignore-unresolvable="true"/>
     <context:component-scan base-package="org.spring.springboot"/>
     <config:profile connect-str="192.168.31.12:2181" root-node="/root" version="1.0.0"/>
-    <!--<config:group id="groupProp" node="address"/>-->
-    <!--<bean id="address" class="org.spring.springboot.Address">-->
-    <!--<property name="address" value="#{groupProp['chengdu']}" />-->
-    <!--<property name="value" value="1" />-->
+
+
+    <!--&lt;!&ndash;第二种方式&ndash;&gt;-->
+    <!--<config:placeholder>-->
+        <!--<config:group node="address"/>-->
+    <!--</config:placeholder>-->
+
+    <!--<bean class="org.spring.springboot.Address">-->
+        <!--<property name="key" value="${chengdu}"/>-->
+        <!--<property name="value" value="第二种方式"/>-->
     <!--</bean>-->
 
-    <config:placeholder>
-        <config:group node="address"/>
-    </config:placeholder>
-
-    <bean class="org.spring.springboot.Address">
-        <property name="key" value="chengdu"/>
-        <property name="value" value="1"/>
+    <!--第三种方式-->
+    <config:group id="groupProp" node="address"/>
+    <bean id="address" class="org.spring.springboot.Address">
+        <property name="key" value="#{groupProp['chengdu']}" />
+        <property name="value" value="第三种方式" />
     </bean>
 </beans>
