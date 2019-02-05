@@ -3,8 +3,6 @@ package org.spring.springboot.web;
 import com.dangdang.config.service.ConfigGroup;
 import com.dangdang.config.service.zookeeper.ZookeeperConfigGroup;
 import com.dangdang.config.service.zookeeper.ZookeeperConfigProfile;
-import org.spring.springboot.Address;
-import org.springframework.beans.factory.annotation.Autowired;
 
 
 /**
