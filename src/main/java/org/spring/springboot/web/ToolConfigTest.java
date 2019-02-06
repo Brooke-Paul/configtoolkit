@@ -17,8 +17,6 @@ public class ToolConfigTest {
         ZookeeperConfigProfile configProfile = new ZookeeperConfigProfile("192.168.31.12:2181", "/root", "1.0.0");
         ConfigGroup zkConfigGroup = new ZookeeperConfigGroup(configProfile, "address");
 
-
-
         while (true) {
             Object obj = "chengdu";
             System.out.println("第一种方式：：" + zkConfigGroup.get(obj));

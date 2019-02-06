@@ -32,19 +32,16 @@ create /root 7c4a8d09ca3762af61e59520943dc26494f8941b
 通过java代码直连   
 
 ZookeeperConfigProfile configProfile = new ZookeeperConfigProfile("192.168.31.12:2181", "/root", "1.0.0");
-        ConfigGroup zkConfigGroup = new ZookeeperConfigGroup(configProfile, "address");
-
-
-
-        while (true) {
-            Object obj = "chengdu";
-            System.out.println("第一种方式：：" + zkConfigGroup.get(obj));
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
+ConfigGroup zkConfigGroup = new ZookeeperConfigGroup(configProfile, "address");
+while (true) {
+    Object obj = "chengdu";
+    System.out.println("第一种方式：：" + zkConfigGroup.get(obj));
+    try {
+        Thread.sleep(1000);
+    } catch (InterruptedException e) {
+        e.printStackTrace();
+    }
+}
 ```
 第二种方式：   
 通过xml配置设值注入属性值      
